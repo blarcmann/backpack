@@ -8,8 +8,13 @@
     "start": "next start"
   },
   "dependencies": {
+    "forever-agent": "^0.6.1",
+    "fs": "0.0.1-security",
     "next": "9.4.4",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "request": "^2.88.2",
+    "sass": "^1.26.8",
+    "url-metadata": "^2.4.0"
   }
 }

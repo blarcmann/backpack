@@ -1,50 +1,50 @@
-import Head from 'next/head'
+import { useState } from 'react';
+import Head from 'next/head';
 
 export default function Home() {
+  const [url, setUrl] = useState('');
+  const [banner, setBanner] = useState('./images/banner-placeholder.png')
+
+  const handleChange = (value) => {
+    setUrl(value)
+  }
+
   return (
     <div className="container">
       <Head>
-        <title>Create Next App</title>
+        <title>Add Item to backpack</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
-        <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+        <div className="grid-content">
 
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
+          <p className="description">
+            Enter <code>website URL</code> to continue
         </p>
-
-        <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className="card">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="card"
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+          <div className="url-form">
+            <form className="url-form" onSubmit={() => console.log('submitted')}>
+              <input type="url" className="" value={url} onChange={(e) => handleChange(e.target.value)} />
+              <button>
+                <img src="./images/continue.png" alt=">" />
+              </button>
+            </form>
+          </div>
+          <div className="grid">
+            <div className="url-card">
+              <span className="close">
+                <img src="./images/close.png" alt="x" />
+              </span>
+              <div className="url-banner">
+                <img src={banner} alt="x" />
+              </div>
+              <div className="url-details">
+                <h2 className="title">Next.js Pages</h2>
+                <p className="description">This document is for Next.js versions 9.3 and up. If you're using older versions of Next.js, refer to our previous documentation.</p>
+                <a href="" className="link">https://nextjs.org/</a>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
 
@@ -143,8 +143,7 @@ export default function Home() {
           align-items: center;
           justify-content: center;
           flex-wrap: wrap;
-
-          max-width: 800px;
+          max-width: 700px;
           margin-top: 3rem;
         }
 
