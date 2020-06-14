@@ -118,7 +118,7 @@ export default class Home extends Component {
             </div>
             {displayCard
               ? <div className="grid">
-                <div className="url-card">
+                <div className="url-card slide-in">
                   <span className="close">
                     <img src="./images/close.png" alt="x" />
                   </span>
