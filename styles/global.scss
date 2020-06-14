@@ -1,10 +1,11 @@
 .url-form {
-  max-width: 700px;
+  width: 100%;
   form {
     display: flex;
     justify-content: center;
     width: 95%;
     margin: auto;
+    width: 100%;
     @media (min-width: 768px) {
       width: 90%;
       margin: auto;
@@ -33,6 +34,12 @@
   }
 }
 .grid-content {
+  width: 96%;
+  margin: auto;
+  @media (min-width: 768px) {
+    width: 45%;
+    max-width: 700px;
+  }
   .url-card {
     display: flex;
     justify-content: flex-start;
@@ -41,7 +48,7 @@
     border-radius: 0.25rem;
     box-shadow: 1px 3px 7px #eee;
     position: relative;
-    width: 95%;
+    width: 90%;
     margin: auto;
     @media (min-width: 768px) {
       width: 90%;
@@ -59,9 +66,9 @@
       }
     }
     .url-banner {
-      width: 33%;
+      width: 35%;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       img {
         width: 100%;
         height: auto;
@@ -69,20 +76,24 @@
     }
     .url-details {
       margin-left: 1rem;
-      width: 66%;
+      width: 65%;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      .title, .description, .link {
+      .title,
+      .description,
+      .link {
         color: #333;
         text-align: left;
+        line-height: 1.5rem;
       }
       .title {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
         font-weight: 500;
+        width: 95%;
       }
       .description {
-        font-size: 0.935rem;
+        font-size: 0.875rem;
         color: #555;
       }
     }
